@@ -1,0 +1,33 @@
+@import "../../common/style/font.less";
+.home {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  .location {
+    width: 20%;
+    text-align: center;
+    color: var(--darkFontColor);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-right: 10px;
+    .icon-weizhi{
+      font-size: 34px;
+      color: #4196F9;
+    }
+  }
+  .search {
+    width: 60%;
+    background: #f1f1f1;
+    height: 40px;
+    padding: 10px 40px 10px 60px;
+  }
+  .icon-search {
+    position: absolute;
+    font-size: 40px;
+    left: 24%;
+    color: var(--lightFontColor);
+  }
+}

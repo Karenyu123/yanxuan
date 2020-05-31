@@ -1,0 +1,5 @@
+<block wx:if="{{$taroCompReady}}">
+    <view>
+        <button>BrandList</button>
+    </view>
+</block>

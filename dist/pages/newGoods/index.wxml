@@ -1,0 +1,5 @@
+<block wx:if="{{$taroCompReady}}">
+    <view>
+        <button>NewGoogs</button>
+    </view>
+</block>

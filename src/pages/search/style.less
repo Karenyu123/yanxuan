@@ -1,0 +1,136 @@
+@import "../../common/style/font.less";
+.search-page {
+  padding: 36px;
+  position: relative;
+  .search {
+    width: 100%;
+    position: relative;
+    input {
+      width: 85%;
+      padding: 10px 50px 10px 60px;
+      background: var(--themeBg);
+    }
+
+    .iconfont {
+      font-size: var(--iconSize);
+      position: absolute;
+      top: 50%;
+      color: var(--lightFontColor);
+      transform: translateY(-50%);
+
+      &.icon-qingchu {
+        right: 20px;
+        font-size: 36px;
+        color: #cccccc;
+        z-index: 2;
+      }
+
+      &.icon-search {
+        left: 15px;
+      }
+    }
+
+    .scroll {
+      margin: 30px 0;
+      max-height: 500px;
+      // min-height: 500px;
+      position: absolute;
+      z-index: 3;
+      background: #fff;
+      top: 50px;
+      left: 0;
+      padding-bottom: 20px;
+      .scroll-item {
+        color: var(--lightFontColor);
+        padding: 10px;
+      }
+    }
+  }
+  .list-wrapper {
+    margin-top: 50px;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      color: var(--lightFontColor);
+      font-weight: bold;
+      font-size: 30px;
+      margin-bottom: 20px;
+      .iconfont {
+        font-weight: normal;
+        font-size: 30px;
+      }
+    }
+    .list{
+      display: flex;
+      flex-wrap: wrap;
+      .list-item {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 8px 20px;
+        border: 2px solid #cccccc;
+        border-radius: 18px;
+        text-align: center;
+        margin-right: 20px;
+        color: #cccccc;
+        font-size: 24px;
+      }
+    }
+  }
+  .goods-wrapper {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    .text {
+      display: block;
+      width: 100%;
+      text-align: center;
+      color: var(--lightFontColor);
+    }
+    .tab {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 90px;
+      .tab-item {
+        flex: 1;
+        text-align: center;
+        .txt {
+          display: inline-block;
+          padding-bottom: 15px;
+          &.active {
+            border-bottom: 4px solid var(--themeColor);
+          }
+        }
+      }
+    }
+    .goods-list {
+      border-top: 2px solid #f1f1f1;
+      display: flex;
+      flex-wrap: wrap;
+      color: var(--lightFontColor);
+      padding: 36px;
+      .list-item {
+        width: 47%;
+        margin: 10px;
+        .img {
+          width: 100%;
+        }
+      }
+      .name {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-left: 20px;
+      }
+      .price {
+        color: var(--themeColor);
+        font-weight: 700;
+        padding: 20px;
+      }
+    }
+  }
+}

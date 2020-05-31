@@ -1,0 +1,54 @@
+@import "../../common/style/font.less";
+.map-page {
+  padding: 20px;
+  .search {
+    width: 100%;
+    position: relative;
+    input {
+      width: 85%;
+      padding: 10px 50px 10px 60px;
+      background: var(--themeBg);
+    }
+    .iconfont {
+      font-size: var(--iconSize);
+      position: absolute;
+      top: 50%;
+      color: var(--lightFontColor);
+      transform: translateY(-50%);
+      &.icon-qingchu {
+        right: 20px;
+        font-size: 36px;
+        color: #cccccc;
+        z-index: 2;
+      }
+      &.icon-search{
+        left: 15px;
+      }
+    }
+    .scroll {
+      margin: 20px 0;
+      max-height: 500px;
+      position: absolute;
+      z-index: 3;
+      background: #fff;
+      top: 50px;
+      left: 0;
+      .scroll-item {
+        color: var(--lightFontColor);
+        padding: 8px;
+      }
+    }
+  }
+  
+  .map-container {
+    width: 100%;
+    margin-top: 80px;
+    .title {
+      color: var(--lightFontColor)
+    }
+    .map {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+}

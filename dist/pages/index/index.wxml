@@ -1,0 +1,77 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="home">
+        <view class="header"><text class="location" bindtap="toMapPage"><text class="iconfont icon-weizhi"></text>{{location}}</text>
+            <input class="search" placeholder="请输入搜索商品" bindtap="toSearch" /><text class="iconfont icon-search"></text>
+        </view>
+        <swiper class="swiper" indicator-dots="{{true}}" indicator-color="#ccc" circular="{{true}}" autoplay="{{true}}">
+            <swiper-item class="swiper-item" wx:key="id" wx:for="{{banner}}" wx:for-item="item" wx:for-index="_anonIdx2">
+                <image class="image" src="{{item.image_url}}" mode="widthFix"></image>
+            </swiper-item>
+        </swiper>
+        <view class="channel">
+            <view class="channel-item" wx:key="id" wx:for="{{channel}}" wx:for-item="item" wx:for-index="_anonIdx4">
+                <image class="img" mode="widthFix" src="{{item.icon_url}}"></image><text class="text">{{item.name}}</text>
+            </view>
+        </view>
+        <view class="brand-list">
+            <view class="title" bindtap="toBrandList">品牌制造商直供</view>
+            <view class="list-item" wx:key="id" wx:for="{{brandList}}" wx:for-item="item" wx:for-index="_anonIdx6">
+                <view class="item-info"><text class="name">{{item.name}}</text><text class="price">￥{{item.floor_price}}</text>
+                </view>
+                <image class="img" mode="aspectFill" src="{{item.pic_url}}"></image>
+            </view>
+        </view>
+        <view class="new-goods">
+            <view class="new-header" bindtap="anonymousFunc0"><text class="first">新品首发</text><text class="all">查看全部</text>
+            </view>
+            <scroll-view class="goods-list" scroll-x="{{true}}">
+                <view class="list-item" wx:key="id" wx:for="{{newGoods}}" wx:for-item="item" wx:for-index="_anonIdx8">
+                    <image class="img" src="{{item.list_pic_url}}" mode="widthFix"></image>
+                    <view class="name">{{item.name}}</view>
+                    <view class="desc">{{item.goods_brief}}</view>
+                    <view class="price">￥{{item.retail_price}}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="new-goods hot-goods">
+            <view class="new-header" bindtap="anonymousFunc1"><text class="first">人气推荐，好物分享</text><text class="all">查看全部</text>
+            </view>
+            <scroll-view class="goods-list" scroll-x="{{true}}">
+                <view class="list-item" wx:key="id" wx:for="{{hotGoods}}" wx:for-item="item" wx:for-index="_anonIdx10">
+                    <image class="img" src="{{item.list_pic_url}}" mode="widthFix"></image>
+                    <view class="name">{{item.name}}</view>
+                    <view class="desc">{{item.goods_brief}}</view>
+                    <view class="price">￥{{item.retail_price}}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="topic-list">
+            <view class="title">专题精选<text class="iconfont icon-rightarrow"></text>
+            </view>
+            <scroll-view class="scroll" scroll-x="{{true}}">
+                <view class="list-item" wx:key="id" bindtap="anonymousFunc2" wx:for="{{loopArray93}}" wx:for-item="item" wx:for-index="__index2" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+                    <image class="img" src="{{item.$original.item_pic_url}}" mode="widthFix"></image>
+                    <view class="name">{{item.$original.title}}<text class="price">￥{{item.$original.price_info}}</text>
+                    </view>
+                    <view class="desc">{{item.$original.subtitle}}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="new-cate" wx:key="id" wx:for="{{newCategoryList}}" wx:for-item="cate" wx:for-index="_anonIdx14">
+            <view class="title">{{cate.name}}好物</view>
+            <block wx:if="{{newCategoryList.length}}">
+                <view class="cate-list">
+                    <block wx:if="{{cate.goodsList}}">
+                        <view class="goods-item" wx:key="id" wx:for="{{cate.goodsList}}" wx:for-item="item" wx:for-index="_anonIdx12">
+                            <image class="img" src="{{item.list_pic_url}}" mode="widthFix"></image>
+                            <view class="name">{{item.name}}</view>
+                            <view class="price">￥{{item.retail_price}}</view>
+                        </view>
+                    </block>
+                    <view class="goods-item last"><text class="more">更多好物</text><text class="iconfont icon-rightarrow"></text>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</block>
