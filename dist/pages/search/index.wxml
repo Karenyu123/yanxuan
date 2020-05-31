@@ -14,7 +14,7 @@
                     <view class="iconfont icon-shanchu" bindtap="clearAllHistory"></view>
                 </view>
                 <view class="list">
-                    <view class="list-item history-item" wx:key="keyword" wx:for="{{loopArray101}}" wx:for-item="item" wx:for-index="__index0">
+                    <view class="list-item history-item" wx:key="keyword" wx:for="{{loopArray22}}" wx:for-item="item" wx:for-index="__index0">
                         <view bindtap="anonymousFunc0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">{{item.$original.keyword}}</view>
                     </view>
                 </view>
@@ -24,7 +24,7 @@
             <view class="title"><text class="text">热门搜索</text>
             </view>
             <view class="list">
-                <view class="list-item hot-item" wx:key="keyword" wx:for="{{loopArray102}}" wx:for-item="item" wx:for-index="__index1">
+                <view class="list-item hot-item" wx:key="keyword" wx:for="{{loopArray23}}" wx:for-item="item" wx:for-index="__index1">
                     <view bindtap="anonymousFunc1" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">{{item.$original.keyword}}</view>
                 </view>
             </view>
@@ -40,11 +40,11 @@
                     <block wx:else>
                         <view>
                             <view class="tab">
-                                <view class="tab-item" wx:key="$original" bindtap="anonymousFunc2" wx:for="{{loopArray103}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}"><text class="{{currentIndex === index ? 'txt active' : 'txt'}}">{{item.$original}}</text>
+                                <view class="tab-item" wx:key="$original" bindtap="anonymousFunc2" wx:for="{{loopArray24}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}"><text class="{{currentIndex === index ? 'txt active' : 'txt'}}">{{item.$original}}</text>
                                 </view>
                             </view>
                             <view class="goods-list">
-                                <view class="list-item" wx:key="id" bindtap="anonymousFunc3" wx:for="{{loopArray104}}" wx:for-item="item" wx:for-index="__index3" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey4}}">
+                                <view class="list-item" wx:key="id" bindtap="anonymousFunc3" wx:for="{{loopArray25}}" wx:for-item="item" wx:for-index="__index3" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey4}}">
                                     <image class="img" src="{{item.$original.list_pic_url}}" mode="widthFix"></image>
                                     <view class="name">{{item.$original.name}}</view>
                                     <view class="price">￥{{item.$original.retail_price}}</view>
