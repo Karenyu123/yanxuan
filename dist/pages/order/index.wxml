@@ -1,0 +1,41 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="order">
+        <view class="address-wrapper">
+            <view class="address">
+                <view class="list">
+                    <view class="address-item">
+                        <view class="title">
+                            <view class="name">张三</view>
+                            <view class="default"><text class="txt">默认</text>
+                            </view>
+                        </view>
+                        <view class="info">
+                            <view class="mobbile">123456</view>
+                            <view class="address">广水市郝店镇</view>
+                        </view><text class="iconfont icon-youjiantou1" bindtap="toAddAddress"></text>
+                    </view>
+                </view>
+            </view>
+            <view class="choose-address" bindtap="toChooseAddr">请选择默认地址</view>
+        </view>
+        <view class="con total-price"><text class="name">商品合计</text><text class="all"></text>
+        </view>
+        <view class="con delivery-fee"><text class="name">运费</text><text class="fee">包邮</text>
+        </view>
+        <view class="con discount"><text class="name">优惠券</text><text class="content">暂无</text>
+        </view>
+        <view class="order-list">
+            <view class="list-item" wx:key="id" wx:for="{{goodsList}}" wx:for-item="item" wx:for-index="_anonIdx2">
+                <image class="img" mode="widthFix"></image>
+                <view class="info">
+                    <view class="name"></view>
+                    <view class="price">￥</view>
+                </view>
+            </view>
+        </view>
+        <view class="order-footer">
+            <view class="total-pay">总支付：<text class="txt">999</text>元</view>
+            <view class="pay">支付</view>
+        </view>
+    </view>
+</block>

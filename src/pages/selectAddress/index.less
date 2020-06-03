@@ -1,0 +1,69 @@
+@import "../../common/style/font.less";
+.select-address {
+  position: relative;
+  padding: 36px;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: url('http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-bg-bd30f2bfeb.png') 0 0 repeat-x #fff;
+  background-size: 62rpx 10rpx;
+  .address-list {
+    .address-item {
+      display: flex;
+      align-items: center;
+      color: var(--lightFontColor);
+      line-height: 60px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ccc;
+      .title {
+        width: 12%;
+
+        .default {
+          .txt {
+            line-height: 30px;
+            display: inline-block;
+            color: var(--themeColor);
+            border: 2px solid var(--themeColor);
+            font-size: 26px;
+            border-radius: 8px;
+          }
+        }
+      }
+
+      .info {
+        width: 82%;
+        font-size: 30px;
+        color: var(--darkFontColor);
+      }
+
+      .icon-bianji {
+        width: 6%;
+        font-size: 36px;
+        // text-align: right;
+      }
+    }
+  }
+  .btns {
+    box-sizing: border-box;
+    overflow: hidden;
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+  }
+  .btn {
+    width: 300px;
+    margin: 0 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    flex: 1;
+    padding: 15px 20px;
+    text-align: center;
+    border: 1px solid var(--themeColor);
+    color: var(--themeColor);
+    &.edit-address {
+      background: var(--themeColor);
+      color: #fff;
+    }
+  }
+}

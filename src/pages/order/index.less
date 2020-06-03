@@ -1,0 +1,105 @@
+@import "../../common/style/font.less";
+.order {
+  min-height: 100vh;
+  background: #f1f1f1;
+  position: relative;
+  .address-wrapper {
+    padding: 36px;
+    width: 100%;
+    min-height: 200px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: url('http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-bg-bd30f2bfeb.png') 0 0 repeat-x #fff;
+    background-size: 62rpx 10rpx;
+    .list {
+      .address-item {
+        display: flex;
+        align-items: center;
+        color: var(--lightFontColor);
+        line-height: 60px;
+        .title {
+          width: 12%;
+          .default {
+            .txt {
+              line-height: 30px;
+              display: inline-block;
+              color: var(--themeColor);
+              border: 2px solid var(--themeColor);
+              font-size: 26px;
+              border-radius: 8px;
+            }
+          }
+        }
+        .info {
+          width: 82%;
+          font-size: 30px;
+          color: var(--darkFontColor);
+        }
+        .icon-youjiantou1 {
+          width: 6%;
+          font-size: 36px;
+          // text-align: right;
+        }
+      }
+    }
+    .choose-address {
+      color: var(--lightFontColor);
+      text-align: center;
+      margin-top: 60px;
+    }
+  }
+  .con {
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    color: var(--lightFontColor);
+    justify-content: space-between;
+  }
+  .order-list {
+    background: #fff;
+    .list-item {
+      display: flex;
+      .img {
+        width: 25%;
+      }
+      .info {
+        width: 75%;
+        color: var(--lightFontColor);
+        line-height: 60px;
+        .name {
+          font-style: 30px;
+        }
+        .price {
+          color: var(--themeColor);
+        }
+      }
+    }
+  }
+  .order-footer {
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    height: 90px;
+    display: flex;
+    .total-pay {
+      padding-left: 20px;
+      width: 80%;
+      background: #fff;
+      color: var(--lightFontColor);
+      line-height: 90px;
+      .txt {
+        color: var(--themeColor);
+        font-size: 30px;
+      }
+    }
+    .pay {
+      width: 20%;
+      background: var(--themeColor);
+      text-align: center;
+      line-height: 90px;
+      color: #fff;
+    }
+  }
+}

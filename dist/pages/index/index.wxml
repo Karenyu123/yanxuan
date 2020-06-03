@@ -49,7 +49,7 @@
             <view class="title">专题精选<text class="iconfont icon-rightarrow"></text>
             </view>
             <scroll-view class="scroll" scroll-x="{{true}}">
-                <view class="list-item" wx:key="id" bindtap="anonymousFunc2" wx:for="{{loopArray19}}" wx:for-item="item" wx:for-index="__index2" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+                <view class="list-item" wx:key="id" bindtap="anonymousFunc2" wx:for="{{loopArray25}}" wx:for-item="item" wx:for-index="__index2" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
                     <image class="img" src="{{item.$original.item_pic_url}}" mode="widthFix"></image>
                     <view class="name">{{item.$original.title}}<text class="price">￥{{item.$original.price_info}}</text>
                     </view>

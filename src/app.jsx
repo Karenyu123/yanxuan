@@ -30,7 +30,10 @@ class App extends Component {
       'pages/brandList/index',
       'pages/newGoods/index',
       'pages/search/index',
-      'pages/goods/index'
+      'pages/goods/index',
+      'pages/order/index',
+      'pages/selectAddress/index',
+      'pages/addAddress/index'
     ],
     window: {
       backgroundTextStyle: 'light',

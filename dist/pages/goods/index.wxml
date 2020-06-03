@@ -1,5 +1,72 @@
 <block wx:if="{{$taroCompReady}}">
-    <view>
-        <button>Goods</button>
+    <view class="goods-detail">
+        <view class="swiper">
+            <swiper class="swiper-container" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
+                <swiper-item class="swiper-item" wx:key="id" wx:for="{{gallery}}" wx:for-item="item" wx:for-index="_anonIdx2">
+                    <image class="img" src="{{item.img_url}}" mode="widthFix"></image>
+                </swiper-item>
+            </swiper>
+            <button class="btn" open-type="share">分享好物</button>
+        </view>
+        <view class="delivery"><text class="txt">30天无忧退货</text><text class="txt">48小时无忧退款</text><text class="txt">满88元免邮费</text>
+        </view>
+        <view class="info">
+            <view class="name">{{info.name}}</view>
+            <view class="desc">{{info.goods_brief}}</view>
+            <view class="price">￥{{info.retail_price}}</view>
+        </view>
+        <view class="select-info" bindtap="handlePopUp"><text class="txt">选择规格数量</text><text class="iconfont icon-youjiantou1"></text>
+        </view>
+        <block wx:if="{{popUp}}">
+            <view class="pop-section">
+                <view class="top">
+                    <image class="img" mode="widthFix" src="{{gallery[0].img_url}}"></image>
+                    <view class="info">
+                        <view class="name">{{info.name}}</view>
+                        <view class="price">￥{{info.retail_price}}</view>
+                        <view class="num"><text class="txt">数量：</text>
+                            <view class="action"><text class="icon minus" bindtap="decrement">-</text><text class="count">{{goodsCount}}</text><text class="icon add" bindtap="add">+</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="iconfont icon-cha" bindtap="handlePopUp"></view>
+            </view>
+        </block>
+        <view class="goods-data">
+            <view class="title">商品参数</view>
+            <view class="data-item" wx:key="name" wx:for="{{attribute}}" wx:for-item="item" wx:for-index="_anonIdx4">
+                <view class="name">{{item.name}}</view>
+                <view class="value">{{item.value}}</view>
+            </view>
+        </view>
+        <rich-text class="rich-text" nodes="{{info.goods_desc}}"></rich-text>
+        <view class="issue-wrapper">
+            <view class="title">常见问题</view>
+            <view class="issues">
+                <view class="issue-item" wx:key="id" wx:for="{{issue}}" wx:for-item="item" wx:for-index="_anonIdx6">
+                    <view class="question"><text class="dot"></text><text class="content">{{item.question}}</text>
+                    </view>
+                    <view class="answer">{{item.answer}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="populate">
+            <view class="title">大家都在看</view>
+            <view class="goods-list">
+                <view class="goods-item" wx:key="id" wx:for="{{productList}}" wx:for-item="item" wx:for-index="_anonIdx8">
+                    <image class="img" mode="widthFix" src="{{item.list_pic_url}}"></image>
+                    <view class="name">{{item.name}}</view>
+                    <view class="price">￥{{item.retail_price}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="footer">
+            <view class="{{collected ? 'iconfont icon-shoucang' : 'iconfont icon-shoucang1'}}" bindtap="handleCollect"></view>
+            <navigator class="iconfont icon-gouwuche" url="/pages/cart/index" open-type="switchTab"><text class="count"></text>
+            </navigator>
+            <view class="cart" catchtap="addCart">加入购物车</view>
+            <view class="buy" catchtap="buy">立即购买</view>
+        </view>
     </view>
 </block>

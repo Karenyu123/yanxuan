@@ -71,6 +71,33 @@
           "pathName": "pages/goods/index",
           "query": "id=1030006",
           "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/order/index",
+          "pathName": "pages/order/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/selectAddress/index",
+          "pathName": "pages/selectAddress/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/addAddress/index",
+          "pathName": "pages/addAddress/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/cart/index",
+          "pathName": "pages/cart/index",
+          "scene": null
         }
       ]
     }

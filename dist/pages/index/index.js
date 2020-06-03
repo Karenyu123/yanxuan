@@ -60,7 +60,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray19", "banner", "channel", "brandList", "newGoods", "hotGoods", "topicList", "newCategoryList", "location"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray25", "banner", "channel", "brandList", "newGoods", "hotGoods", "topicList", "newCategoryList", "location"], _this.state = {
       location: '广水',
       banner: [],
       brandList: [],
@@ -252,7 +252,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         return _this2.toGoodsList("hot");
       };
 
-      var loopArray19 = topicList.map(function (item, __index2) {
+      var loopArray25 = topicList.map(function (item, __index2) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
@@ -269,7 +269,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
         };
       });
       Object.assign(this.__state, {
-        loopArray19: loopArray19
+        loopArray25: loopArray25
       });
       return this.__state;
     }

@@ -54,7 +54,7 @@ var MapPage = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MapPage.__proto__ || Object.getPrototypeOf(MapPage)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray13", "keyword", "isFocus", "suggestList", "longitude", "latitude", "markers"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MapPage.__proto__ || Object.getPrototypeOf(MapPage)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray18", "keyword", "isFocus", "suggestList", "longitude", "latitude", "markers"], _this.state = {
       keyword: '',
       longitude: 0,
       latitude: 0,
@@ -161,7 +161,7 @@ var MapPage = (_temp2 = _class = function (_Taro$Component) {
           keyword = _state.keyword,
           suggestList = _state.suggestList;
 
-      var loopArray13 = suggestList.map(function (item, __index0) {
+      var loopArray18 = suggestList.map(function (item, __index0) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
@@ -178,7 +178,7 @@ var MapPage = (_temp2 = _class = function (_Taro$Component) {
         };
       });
       Object.assign(this.__state, {
-        loopArray13: loopArray13
+        loopArray18: loopArray18
       });
       return this.__state;
     }

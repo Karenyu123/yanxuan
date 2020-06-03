@@ -87,56 +87,102 @@
 .icon-kefu1:before {
   content: "\e63e";
 }
-.map-page {
-  padding: 20rpx;
-}
-.map-page .search {
-  width: 100%;
+.order {
+  min-height: 100vh;
+  background: #f1f1f1;
   position: relative;
 }
-.map-page .search input {
-  width: 85%;
-  padding: 10rpx 50rpx 10rpx 60rpx;
-  background: var(--themeBg);
+.order .address-wrapper {
+  padding: 36rpx;
+  width: 100%;
+  min-height: 200rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: url('http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-bg-bd30f2bfeb.png') 0 0 repeat-x #fff;
+  background-size: 62rpx 10rpx;
 }
-.map-page .search .iconfont {
-  font-size: var(--iconSize);
-  position: absolute;
-  top: 50%;
+.order .address-wrapper .list .address-item {
+  display: flex;
+  align-items: center;
   color: var(--lightFontColor);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  line-height: 60rpx;
 }
-.map-page .search .iconfont.icon-qingchu {
-  right: 20rpx;
+.order .address-wrapper .list .address-item .title {
+  width: 12%;
+}
+.order .address-wrapper .list .address-item .title .default .txt {
+  line-height: 30rpx;
+  display: inline-block;
+  color: var(--themeColor);
+  border: 2rpx solid var(--themeColor);
+  font-size: 26rpx;
+  border-radius: 8rpx;
+}
+.order .address-wrapper .list .address-item .info {
+  width: 82%;
+  font-size: 30rpx;
+  color: var(--darkFontColor);
+}
+.order .address-wrapper .list .address-item .icon-youjiantou1 {
+  width: 6%;
   font-size: 36rpx;
-  color: #cccccc;
-  z-index: 2;
 }
-.map-page .search .iconfont.icon-search {
-  left: 15rpx;
+.order .address-wrapper .choose-address {
+  color: var(--lightFontColor);
+  text-align: center;
+  margin-top: 60rpx;
 }
-.map-page .search .scroll {
-  margin: 20rpx 0;
-  max-height: 500rpx;
-  position: absolute;
-  z-index: 3;
+.order .con {
   background: #fff;
-  top: 50rpx;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  display: flex;
+  color: var(--lightFontColor);
+  justify-content: space-between;
+}
+.order .order-list {
+  background: #fff;
+}
+.order .order-list .list-item {
+  display: flex;
+}
+.order .order-list .list-item .img {
+  width: 25%;
+}
+.order .order-list .list-item .info {
+  width: 75%;
+  color: var(--lightFontColor);
+  line-height: 60rpx;
+}
+.order .order-list .list-item .info .name {
+  font-style: 30rpx;
+}
+.order .order-list .list-item .info .price {
+  color: var(--themeColor);
+}
+.order .order-footer {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
   left: 0;
+  height: 90rpx;
+  display: flex;
 }
-.map-page .search .scroll .scroll-item {
+.order .order-footer .total-pay {
+  padding-left: 20rpx;
+  width: 80%;
+  background: #fff;
   color: var(--lightFontColor);
-  padding: 8rpx;
+  line-height: 90rpx;
 }
-.map-page .map-container {
-  width: 100%;
-  margin-top: 80rpx;
+.order .order-footer .total-pay .txt {
+  color: var(--themeColor);
+  font-size: 30rpx;
 }
-.map-page .map-container .title {
-  color: var(--lightFontColor);
-}
-.map-page .map-container .map {
-  margin-top: 10rpx;
-  width: 100%;
+.order .order-footer .pay {
+  width: 20%;
+  background: var(--themeColor);
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
 }

@@ -1,0 +1,18 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="add-address">
+        <view class="address-wrapper">
+            <input class="address-item" value="{{name}}" placeholder="收件人" />
+            <input class="address-item" value="{{number}}" placeholder="联系方式" />
+            <picker class="address-item" mode="region" bindchange="handleAddressPicker">{{address}}</picker>
+            <input class="address-item" placeholder="请输入详细地址" value="{{addressDetail}}" />
+        </view>
+        <view class="action">
+            <view class="check">
+                <radio class="radio" color="#B3A17E" checked="{{checked}}" bindtap="handleRadio"></radio><text class="txt">设置为默认地址</text>
+            </view>
+            <view class="other"><text class="txt" bindtap="chooseAddress">一键导入微信地址</text><text class="iconfont icon-youjiantou1"></text>
+            </view>
+        </view>
+        <view class="btn" bindtap="saveAddress">保存</view>
+    </view>
+</block>

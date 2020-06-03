@@ -1,0 +1,42 @@
+@import "../../common/style/font.less";
+.add-address {
+  .address-wrapper {
+    padding: 0 36px;
+    color: var(--darkFontColor);
+    font-size: 30px;
+    .address-item {
+      line-height: 70px;
+      padding: 20px;
+      border-bottom: 1px solid #f1f1f1;
+    }
+  }
+  .action {
+    padding: 30px 36px;
+    color: var(--lightFontColor);
+    display: flex;
+    justify-content: space-between;
+    .radio {
+      // width: 30px;
+      margin-right: 20px;
+    }
+    .other {
+      color: var(--themeColor);
+      .iconfont {
+        font-size: 36px;
+        vertical-align: middle;
+        padding-left: 20px;
+      }
+    }
+  }
+  .btn {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: var(--themeColor);
+    text-align: center;
+    color: #fff;
+    line-height: 80px;
+    font-size: 34px;
+  }
+}

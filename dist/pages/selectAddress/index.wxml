@@ -1,0 +1,21 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="select-address">
+        <view class="address-list">
+            <view class="address-item">
+                <view class="title">
+                    <view class="name">张三</view>
+                    <view class="default"><text class="txt">默认</text>
+                    </view>
+                </view>
+                <view class="info">
+                    <view class="mobbile">123456</view>
+                    <view class="address">广水市郝店镇</view>
+                </view><text class="iconfont icon-bianji" bindtap="toAddAddress"></text>
+            </view>
+        </view>
+        <view class="btns">
+            <view class="btn new-address" bindtap="toAddAddress">新增地址</view>
+            <view class="btn edit-address" bindtap="toAddAddress">一键导入微信地址</view>
+        </view>
+    </view>
+</block>

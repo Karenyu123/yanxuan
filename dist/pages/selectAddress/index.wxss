@@ -87,56 +87,63 @@
 .icon-kefu1:before {
   content: "\e63e";
 }
-.map-page {
-  padding: 20rpx;
-}
-.map-page .search {
-  width: 100%;
+.select-address {
   position: relative;
+  padding: 36rpx;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: url('http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-bg-bd30f2bfeb.png') 0 0 repeat-x #fff;
+  background-size: 62rpx 10rpx;
 }
-.map-page .search input {
-  width: 85%;
-  padding: 10rpx 50rpx 10rpx 60rpx;
-  background: var(--themeBg);
-}
-.map-page .search .iconfont {
-  font-size: var(--iconSize);
-  position: absolute;
-  top: 50%;
+.select-address .address-list .address-item {
+  display: flex;
+  align-items: center;
   color: var(--lightFontColor);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  line-height: 60rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #ccc;
 }
-.map-page .search .iconfont.icon-qingchu {
-  right: 20rpx;
+.select-address .address-list .address-item .title {
+  width: 12%;
+}
+.select-address .address-list .address-item .title .default .txt {
+  line-height: 30rpx;
+  display: inline-block;
+  color: var(--themeColor);
+  border: 2rpx solid var(--themeColor);
+  font-size: 26rpx;
+  border-radius: 8rpx;
+}
+.select-address .address-list .address-item .info {
+  width: 82%;
+  font-size: 30rpx;
+  color: var(--darkFontColor);
+}
+.select-address .address-list .address-item .icon-bianji {
+  width: 6%;
   font-size: 36rpx;
-  color: #cccccc;
-  z-index: 2;
 }
-.map-page .search .iconfont.icon-search {
-  left: 15rpx;
+.select-address .btns {
+  box-sizing: border-box;
+  overflow: hidden;
+  position: fixed;
+  bottom: 30rpx;
+  display: flex;
 }
-.map-page .search .scroll {
-  margin: 20rpx 0;
-  max-height: 500rpx;
-  position: absolute;
-  z-index: 3;
-  background: #fff;
-  top: 50rpx;
-  left: 0;
+.select-address .btn {
+  width: 300rpx;
+  margin: 0 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex: 1;
+  padding: 15rpx 20rpx;
+  text-align: center;
+  border: 1rpx solid var(--themeColor);
+  color: var(--themeColor);
 }
-.map-page .search .scroll .scroll-item {
-  color: var(--lightFontColor);
-  padding: 8rpx;
-}
-.map-page .map-container {
-  width: 100%;
-  margin-top: 80rpx;
-}
-.map-page .map-container .title {
-  color: var(--lightFontColor);
-}
-.map-page .map-container .map {
-  margin-top: 10rpx;
-  width: 100%;
+.select-address .btn.edit-address {
+  background: var(--themeColor);
+  color: #fff;
 }
