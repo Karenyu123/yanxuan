@@ -1,3 +1,10 @@
 <block wx:if="{{$taroCompReady}}">
-    <view>Topic</view>
+    <view class="topic">
+        <view class="topic-item" wx:key="id" bindtap="anonymousFunc0" wx:for="{{loopArray26}}" wx:for-item="item" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+            <image class="img" src="{{item.$original.scene_pic_url}}" mode="aspectFill"></image>
+            <view class="title">{{item.$original.title}}</view>
+            <view class="subtitle">{{item.$original.subtitle}}</view>
+            <view class="price">{{item.$original.price_info}}元起</view>
+        </view>
+    </view>
 </block>

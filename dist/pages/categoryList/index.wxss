@@ -1,0 +1,71 @@
+.category-list {
+  background: var(--themeBg);
+}
+.category-list .scroll {
+  white-space: nowrap;
+  min-width: 100vw;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.category-list .scroll .nav-item {
+  display: inline-block;
+  height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: var(--lightFontColor);
+  margin: 0 20rpx;
+}
+.category-list .scroll .nav-item.active {
+  border-bottom: 4rpx solid var(--themeColor);
+  color: var(--themeColor);
+  font-weight: bold;
+}
+.category-list .goodslist .goods-title {
+  padding: 36rpx;
+  background: #fff;
+  color: var(--lightFontColor);
+  text-align: center;
+  margin-bottom: 5rpx;
+}
+.category-list .goodslist .goods-title .title {
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: var(--darkFontColor);
+}
+.category-list .goodslist .goods-title .subtitle {
+  line-height: 40rpx;
+  font-size: 26rpx;
+}
+.category-list .goodslist .list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.category-list .goodslist .list-wrapper .list-item {
+  width: 48%;
+  margin-left: 10rpx;
+}
+.category-list .goodslist .list-wrapper .list-item .img {
+  width: 100%;
+}
+.category-list .goodslist .list-wrapper .list-item .name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 20rpx;
+  color: var(--lightFontColor);
+}
+.category-list .goodslist .list-wrapper .list-item .price {
+  font-weight: 700;
+  color: var(--themeColor);
+  padding: 20rpx;
+}
+.category-list .goodslist .null {
+  text-align: center;
+  background: #fff;
+  color: var(--lightFontColor);
+  padding-top: 60rpx;
+}

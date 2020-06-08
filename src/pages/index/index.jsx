@@ -134,6 +134,9 @@ export default class Index extends Component {
   toSearch = () => {
     Taro.navigateTo({url: '/pages/search/index'})
   }
+  toCategoryList = (id) => {
+    Taro.navigateTo({url: '/pages/categoryList/index?id=' + id})
+  }
   render() {
     const {
       location,
@@ -173,7 +176,7 @@ export default class Index extends Component {
         <View className="channel">
           {channel.map((item) => {
             return (
-              <View className="channel-item" key={item.id}>
+              <View className="channel-item" key={item.id} onClick={() => this.toCategoryList(item.id)}>
                 <Image
                   className="img"
                   mode="widthFix"

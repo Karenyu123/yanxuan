@@ -83,7 +83,7 @@ class App extends Component {
   componentDidCatchError() {}
 
   config = {
-    pages: ["/pages/index/index", "/pages/topics/index", "/pages/category/index", "/pages/cart/index", "/pages/user/index", "/pages/mapPage/index"],
+    pages: ["/pages/index/index", "/pages/topics/index", "/pages/category/index", "/pages/cart/index", "/pages/user/index", "/pages/mapPage/index", "/pages/brandList/index", "/pages/newGoods/index", "/pages/search/index", "/pages/goods/index", "/pages/order/index", "/pages/selectAddress/index", "/pages/addAddress/index", "/pages/categoryList/index", "/pages/topicDetail/index"],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -130,6 +130,42 @@ class App extends Component {
         }, {
           path: '/pages/mapPage/index',
           componentLoader: () => import( /* webpackChunkName: "mapPage_index" */'./pages/mapPage/index'),
+          isIndex: false
+        }, {
+          path: '/pages/brandList/index',
+          componentLoader: () => import( /* webpackChunkName: "brandList_index" */'./pages/brandList/index'),
+          isIndex: false
+        }, {
+          path: '/pages/newGoods/index',
+          componentLoader: () => import( /* webpackChunkName: "newGoods_index" */'./pages/newGoods/index'),
+          isIndex: false
+        }, {
+          path: '/pages/search/index',
+          componentLoader: () => import( /* webpackChunkName: "search_index" */'./pages/search/index'),
+          isIndex: false
+        }, {
+          path: '/pages/goods/index',
+          componentLoader: () => import( /* webpackChunkName: "goods_index" */'./pages/goods/index'),
+          isIndex: false
+        }, {
+          path: '/pages/order/index',
+          componentLoader: () => import( /* webpackChunkName: "order_index" */'./pages/order/index'),
+          isIndex: false
+        }, {
+          path: '/pages/selectAddress/index',
+          componentLoader: () => import( /* webpackChunkName: "selectAddress_index" */'./pages/selectAddress/index'),
+          isIndex: false
+        }, {
+          path: '/pages/addAddress/index',
+          componentLoader: () => import( /* webpackChunkName: "addAddress_index" */'./pages/addAddress/index'),
+          isIndex: false
+        }, {
+          path: '/pages/categoryList/index',
+          componentLoader: () => import( /* webpackChunkName: "categoryList_index" */'./pages/categoryList/index'),
+          isIndex: false
+        }, {
+          path: '/pages/topicDetail/index',
+          componentLoader: () => import( /* webpackChunkName: "topicDetail_index" */'./pages/topicDetail/index'),
           isIndex: false
         }]} tabBar={this.state.__tabs} customRoutes={{}} />
                 

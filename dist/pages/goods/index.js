@@ -232,7 +232,8 @@ var Goods = (_temp2 = _class = function (_Taro$Component) {
       };
     }(), _this.addCart = function () {
       var _ref7 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee5(e) {
-        var res;
+        var _this$state, openid, goodsCount, res;
+
         return _regenerator2.default.wrap(function _callee5$(_context5) {
           while (1) {
             switch (_context5.prev = _context5.next) {
@@ -244,11 +245,16 @@ var Goods = (_temp2 = _class = function (_Taro$Component) {
                 });
 
                 if (!(num % 2 === 0)) {
-                  _context5.next = 9;
+                  _context5.next = 13;
                   break;
                 }
 
-                _context5.next = 6;
+                _this$state = _this.state, openid = _this$state.openid, goodsCount = _this$state.goodsCount;
+
+                console.log('id', openid);
+                console.log('num', goodsCount);
+                console.log('gid', _this.$router.params.id);
+                _context5.next = 10;
                 return (0, _request.request)({
                   url: '/cart/addCart', method: 'POST', data: {
                     openId: _this.state.openid,
@@ -257,7 +263,7 @@ var Goods = (_temp2 = _class = function (_Taro$Component) {
                   }
                 });
 
-              case 6:
+              case 10:
                 res = _context5.sent;
 
                 _taroWeapp2.default.showToast({ title: '添加购物车成功' });
@@ -265,7 +271,7 @@ var Goods = (_temp2 = _class = function (_Taro$Component) {
                   popUp: false
                 });
 
-              case 9:
+              case 13:
               case 'end':
                 return _context5.stop();
             }

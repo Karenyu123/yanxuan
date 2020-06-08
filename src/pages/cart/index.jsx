@@ -4,6 +4,9 @@ import "./style.less"
 import { request } from '../../utils/request' 
 
 export default class Cart extends Taro.Component {
+  state = {
+    cartlist: []
+  }
   componentDidShow() {
     this.getCartList()
   }
@@ -13,9 +16,12 @@ export default class Cart extends Taro.Component {
         openId: Taro.getStorageSync('openid')
       }
     })
-    console.log(data)
+    this.setState({
+      cartlist: data.data
+    })
   }
-  render () {
+  render() {
+    const { cartlist } = this.state
     return (
       <View className="cart">
         <View className="header">
@@ -24,15 +30,21 @@ export default class Cart extends Taro.Component {
           <Text className="txt">满88元免邮费</Text>
         </View>
         <View className="goods-list">
-          <View className="goods-item">
-            <Radio className="radio"></Radio>
-            <Image className="img" mode="widthFix" />
-            <View className="info">
-              <View className="name"></View>
-              <View className="price"></View>
-            </View>
-            <View className="count">2</View>
-          </View>
+          {
+            cartlist.map(item => {
+              return (
+                <View className="goods-item" key={item.id}>
+                  <Radio className="radio"></Radio>
+                  <Image className="img" mode="widthFix" src={ item.list_pic_url} />
+                  <View className="info">
+                    <View className="name">{ item.goods_name}</View>
+                    <View className="price">￥ { item.retail_price}</View>
+                  </View>
+                  <View className="count">x {item.number}</View>
+                </View>
+              )
+            })
+          }
         </View>
         <View className="cart-footer">
           <View className="left">

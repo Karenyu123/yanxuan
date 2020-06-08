@@ -97,6 +97,41 @@
 					"id": -1,
 					"name": "pages/cart/index",
 					"pathName": "pages/cart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "pages/categoryList/index",
+					"pathName": "pages/categoryList/index",
+					"query": "id=1005000",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/topics/index",
+					"pathName": "pages/topics/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/topicDetail/index",
+					"pathName": "pages/topicDetail/index",
+					"query": "id=314",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/category/index",
+					"pathName": "pages/category/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/index",
+					"pathName": "pages/user/index",
 					"scene": null
 				}
 			]

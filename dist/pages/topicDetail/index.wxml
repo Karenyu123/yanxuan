@@ -1,0 +1,11 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="topic-detail">
+        <rich-text nodes="{{goodsDesc}}"></rich-text>
+        <view class="recommend-list">
+            <view class="item" wx:key="id" wx:for="{{recommends}}" wx:for-item="item" wx:for-index="_anonIdx2">
+                <image class="img" mode="widthFix" src="{{item.scene_pic_url}}"></image>
+                <view class="name">{{item.title}}</view>
+            </view>
+        </view>
+    </view>
+</block>

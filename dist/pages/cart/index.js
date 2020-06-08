@@ -57,7 +57,9 @@ var Cart = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Cart.__proto__ || Object.getPrototypeOf(Cart)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = [], _this.getCartList = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Cart.__proto__ || Object.getPrototypeOf(Cart)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["cartlist"], _this.state = {
+      cartlist: []
+    }, _this.getCartList = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
       var data;
       return _regenerator2.default.wrap(function _callee$(_context) {
         while (1) {
@@ -73,7 +75,9 @@ var Cart = (_temp2 = _class = function (_Taro$Component) {
             case 2:
               data = _context.sent;
 
-              console.log(data);
+              _this.setState({
+                cartlist: data.data
+              });
 
             case 4:
             case "end":
@@ -104,6 +108,9 @@ var Cart = (_temp2 = _class = function (_Taro$Component) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
+
+      var cartlist = this.__state.cartlist;
+
       Object.assign(this.__state, {});
       return this.__state;
     }

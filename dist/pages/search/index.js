@@ -57,10 +57,10 @@ var Search = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray28", "loopArray29", "loopArray30", "loopArray31", "keyword", "isFocus", "suggestList", "historyList", "hotList", "showGoodslist", "goodsList", "tabs", "currentIndex", "openid", "order"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray54", "loopArray55", "loopArray56", "loopArray57", "keyword", "isFocus", "suggestList", "historyList", "hotList", "showGoodslist", "goodsList", "tabs", "currentIndex", "openid", "order"], _this.state = {
       keyword: '',
       isFocus: false,
-      openid: '',
+      openid: '0339cGX00ggkNI1taKX00sEQX009cGXn',
       suggestList: [],
       goodsList: [],
       order: 'asc',
@@ -118,11 +118,10 @@ var Search = (_temp2 = _class = function (_Taro$Component) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              console.log('id', _this.state.openid);
-              _context2.next = 3;
+              _context2.next = 2;
               return (0, _request.request)({ url: '/search/indexaction?openId=' + _this.state.openid });
 
-            case 3:
+            case 2:
               _ref4 = _context2.sent;
               historyData = _ref4.historyData;
               hotKeywordList = _ref4.hotKeywordList;
@@ -132,7 +131,7 @@ var Search = (_temp2 = _class = function (_Taro$Component) {
                 hotList: hotKeywordList
               });
 
-            case 7:
+            case 6:
             case 'end':
               return _context2.stop();
           }
@@ -319,12 +318,12 @@ var Search = (_temp2 = _class = function (_Taro$Component) {
           showGoodslist = _state.showGoodslist,
           currentIndex = _state.currentIndex;
 
-      var loopArray28 = historyList.length ? historyList.map(function (item, __index0) {
+      var loopArray54 = historyList.length ? historyList.map(function (item, __index0) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "izzzz" + __index0;
+        var _$indexKey = "cizzz" + __index0;
 
         _this3.anonymousFunc0Map[_$indexKey] = function () {
           return _this3.searchWord(item.$original.keyword);
@@ -335,12 +334,12 @@ var Search = (_temp2 = _class = function (_Taro$Component) {
           $original: item.$original
         };
       }) : [];
-      var loopArray29 = hotList.map(function (item, __index1) {
+      var loopArray55 = hotList.map(function (item, __index1) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey2 = "jzzzz" + __index1;
+        var _$indexKey2 = "cjzzz" + __index1;
 
         _this3.anonymousFunc1Map[_$indexKey2] = function () {
           return _this3.searchWord(item.$original.keyword);
@@ -351,12 +350,12 @@ var Search = (_temp2 = _class = function (_Taro$Component) {
           $original: item.$original
         };
       });
-      var loopArray30 = !!goodsList.length ? tabs.map(function (item, index) {
+      var loopArray56 = !!goodsList.length ? tabs.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey3 = "bazzz" + index;
+        var _$indexKey3 = "dazzz" + index;
 
         _this3.anonymousFunc2Map[_$indexKey3] = function () {
           return _this3.switchTap(index);
@@ -367,12 +366,12 @@ var Search = (_temp2 = _class = function (_Taro$Component) {
           $original: item.$original
         };
       }) : [];
-      var loopArray31 = !!goodsList.length ? goodsList.map(function (item, __index3) {
+      var loopArray57 = !!goodsList.length ? goodsList.map(function (item, __index3) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey4 = "bbzzz" + __index3;
+        var _$indexKey4 = "dbzzz" + __index3;
 
         _this3.anonymousFunc3Map[_$indexKey4] = function () {
           return _this3.toGoodsDetail(item.$original.id);
@@ -384,10 +383,10 @@ var Search = (_temp2 = _class = function (_Taro$Component) {
         };
       }) : [];
       Object.assign(this.__state, {
-        loopArray28: loopArray28,
-        loopArray29: loopArray29,
-        loopArray30: loopArray30,
-        loopArray31: loopArray31
+        loopArray54: loopArray54,
+        loopArray55: loopArray55,
+        loopArray56: loopArray56,
+        loopArray57: loopArray57
       });
       return this.__state;
     }

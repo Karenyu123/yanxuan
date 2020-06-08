@@ -1,0 +1,18 @@
+.topic-detail {
+  background: var(--themeBg);
+}
+.topic-detail .recommend-list {
+  padding: 0 20rpx;
+}
+.topic-detail .recommend-list .item {
+  background: #fff;
+  padding: 20rpx;
+  margin: 20rpx 0;
+}
+.topic-detail .recommend-list .item .img {
+  width: 100%;
+  max-height: 300rpx;
+}
+.topic-detail .recommend-list .item .name {
+  margin: 20rpx 0;
+}

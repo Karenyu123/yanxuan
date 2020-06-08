@@ -118,6 +118,10 @@ export default class Goods extends Taro.Component {
       popUp: true
     })
     if (num % 2 === 0) {
+      const { openid, goodsCount } = this.state
+      console.log('id', openid)
+      console.log('num', goodsCount)
+      console.log('gid', this.$router.params.id )
       const res = await request({
         url: '/cart/addCart', method: 'POST', data: {
           openId: this.state.openid,

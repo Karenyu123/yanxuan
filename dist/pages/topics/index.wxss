@@ -1,0 +1,22 @@
+.topic .topic-item {
+  text-align: center;
+}
+.topic .topic-item .img {
+  width: 100vw;
+  max-height: 45vw;
+}
+.topic .topic-item .title {
+  font-size: 36rpx;
+  line-height: 80rpx;
+  color: var(--dartFontColor);
+}
+.topic .topic-item .subtitle {
+  color: var(--lightFontColor);
+  line-height: 50rpx;
+  padding: 0 60rpx;
+}
+.topic .topic-item .price {
+  line-height: 80rpx;
+  color: var(--themeColor);
+  font-weight: bold;
+}

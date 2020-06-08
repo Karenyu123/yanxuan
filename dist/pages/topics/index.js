@@ -1,9 +1,9 @@
 (wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["pages/topics/index"],{
 
-/***/ "./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/topics/index.js?taro&type=script&parse=PAGE&":
-/*!****************************************************************************************************************************************!*\
-  !*** ./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/topics?taro&type=script&parse=PAGE& ***!
-  \****************************************************************************************************************************************/
+/***/ "./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/topics/index.jsx?taro&type=script&parse=PAGE&":
+/*!**************************************************************************************************************************************************!*\
+  !*** ./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/topics/index.jsx?taro&type=script&parse=PAGE& ***!
+  \**************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13,6 +13,10 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _regenerator = __webpack_require__(/*! babel-runtime/regenerator */ "./node_modules/babel-runtime/regenerator/index.js");
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -24,9 +28,15 @@ var _taroWeapp = __webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@
 
 var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
 
+var _request = __webpack_require__(/*! ../../utils/request */ "./src/utils/request.js");
+
 __webpack_require__(/*! ./index.less */ "./src/pages/topics/index.less");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -38,7 +48,8 @@ var Topics = (_temp2 = _class = function (_BaseComponent) {
   _inherits(Topics, _BaseComponent);
 
   function Topics() {
-    var _ref;
+    var _ref,
+        _this2 = this;
 
     var _temp, _this, _ret;
 
@@ -48,64 +59,150 @@ var Topics = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Topics.__proto__ || Object.getPrototypeOf(Topics)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = [], _this.state = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Topics.__proto__ || Object.getPrototypeOf(Topics)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray26", "topiclist", "page", "total"], _this.state = {
+      page: 1,
+      topiclist: [],
+      total: 0
+    }, _this.config = {
+      enablePullDownRefresh: true
+    }, _this._getTopicData = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+      var page, data;
+      return _regenerator2.default.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              page = _this.state.page;
+              _context.next = 3;
+              return (0, _request.request)({
+                url: '/topic/listaction', data: {
+                  page: page
+                }
+              });
+
+            case 3:
+              data = _context.sent;
+
+              _this.setState(function (preState) {
+                return {
+                  topiclist: [].concat(_toConsumableArray(preState.topiclist), _toConsumableArray(data.data)),
+                  total: data.total
+                };
+              });
+
+            case 5:
+            case 'end':
+              return _context.stop();
+          }
+        }
+      }, _callee, _this2);
+    })), _this.toTopicDetail = function (id) {
+      console.log(id);
+      _taroWeapp2.default.navigateTo({ url: '/pages/topicDetail/index?id=' + id });
+    }, _this.anonymousFunc0Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Topics, [{
-    key: "_constructor",
+    key: '_constructor',
     value: function _constructor(props) {
-      _get(Topics.prototype.__proto__ || Object.getPrototypeOf(Topics.prototype), "_constructor", this).call(this, props);
+      _get(Topics.prototype.__proto__ || Object.getPrototypeOf(Topics.prototype), '_constructor', this).call(this, props);
+
       this.$$refs = new _taroWeapp2.default.RefsArray();
     }
   }, {
-    key: "componentWillMount",
-    value: function componentWillMount() {}
+    key: 'onPullDownRefresh',
+    value: function onPullDownRefresh() {
+      var _this3 = this;
+
+      this.setState({ page: 1 }, function () {
+        _this3._getTopicData();
+        _taroWeapp2.default.stopPullDownRefresh();
+      });
+    }
   }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {}
+    key: 'onReachBottom',
+    value: function onReachBottom() {
+      var _this4 = this;
+
+      var _state = this.state,
+          page = _state.page,
+          total = _state.total;
+
+      if (page > total) {
+        _taroWeapp2.default.showToast({ titel: '到底了哟' });
+        return;
+      }
+      this.setState({
+        page: page + 1
+      }, function () {
+        _this4._getTopicData();
+      });
+    }
   }, {
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(nextProps, nextContext) {}
+    key: 'componentDidShow',
+    value: function componentDidShow() {
+      this._getTopicData();
+    }
   }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {}
-  }, {
-    key: "componentDidShow",
-    value: function componentDidShow() {}
-  }, {
-    key: "componentDidHide",
-    value: function componentDidHide() {}
-  }, {
-    key: "componentDidCatchError",
-    value: function componentDidCatchError() {}
-  }, {
-    key: "componentDidNotFound",
-    value: function componentDidNotFound() {}
-  }, {
-    key: "_createData",
+    key: '_createData',
     value: function _createData() {
+      var _this5 = this;
+
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      Object.assign(this.__state, {});
+
+      var topiclist = this.__state.topiclist;
+
+      var loopArray26 = topiclist.map(function (item, __index0) {
+        item = {
+          $original: (0, _taroWeapp.internal_get_original)(item)
+        };
+
+        var _$indexKey = "bezzz" + __index0;
+
+        _this5.anonymousFunc0Map[_$indexKey] = function () {
+          return _this5.toTopicDetail(item.$original.id);
+        };
+
+        return {
+          _$indexKey: _$indexKey,
+          $original: item.$original
+        };
+      });
+      Object.assign(this.__state, {
+        loopArray26: loopArray26
+      });
       return this.__state;
+    }
+  }, {
+    key: 'anonymousFunc0',
+    value: function anonymousFunc0(_$indexKey) {
+      var _anonymousFunc0Map;
+
+      ;
+
+      for (var _len2 = arguments.length, e = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        e[_key2 - 1] = arguments[_key2];
+      }
+
+      return this.anonymousFunc0Map[_$indexKey] && (_anonymousFunc0Map = this.anonymousFunc0Map)[_$indexKey].apply(_anonymousFunc0Map, e);
     }
   }]);
 
   return Topics;
-}(_taroWeapp.Component), _class.$$events = [], _class.$$componentPath = "pages/topics/index", _temp2);
+}(_taroWeapp.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/topics/index", _temp2);
 exports.default = Topics;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(Topics, true));
 
 /***/ }),
 
-/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=D:\\taro\\yanxuan\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/topics/index.js?taro&type=template&parse=PAGE&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=D:/taro/yanxuan/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/topics?taro&type=template&parse=PAGE& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=D:\\taro\\yanxuan\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/topics/index.jsx?taro&type=template&parse=PAGE&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=D:/taro/yanxuan/src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/topics/index.jsx?taro&type=template&parse=PAGE& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -113,52 +210,52 @@ module.exports = __webpack_require__.p + "pages/topics/index.wxml";
 
 /***/ }),
 
-/***/ "./src/pages/topics/index.js":
-/*!***********************************!*\
-  !*** ./src/pages/topics/index.js ***!
-  \***********************************/
+/***/ "./src/pages/topics/index.jsx":
+/*!************************************!*\
+  !*** ./src/pages/topics/index.jsx ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index_js_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! .?taro&type=template&parse=PAGE& */ "./src/pages/topics/index.js?taro&type=template&parse=PAGE&");
-/* harmony import */ var _index_js_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! .?taro&type=script&parse=PAGE& */ "./src/pages/topics/index.js?taro&type=script&parse=PAGE&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _index_js_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _index_js_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _index_jsx_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.jsx?taro&type=template&parse=PAGE& */ "./src/pages/topics/index.jsx?taro&type=template&parse=PAGE&");
+/* harmony import */ var _index_jsx_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.jsx?taro&type=script&parse=PAGE& */ "./src/pages/topics/index.jsx?taro&type=script&parse=PAGE&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _index_jsx_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _index_jsx_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 
 
 /***/ }),
 
-/***/ "./src/pages/topics/index.js?taro&type=script&parse=PAGE&":
-/*!*******************************************************!*\
-  !*** ./src/pages/topics?taro&type=script&parse=PAGE& ***!
-  \*******************************************************/
+/***/ "./src/pages/topics/index.jsx?taro&type=script&parse=PAGE&":
+/*!*****************************************************************!*\
+  !*** ./src/pages/topics/index.jsx?taro&type=script&parse=PAGE& ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_js_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!.?taro&type=script&parse=PAGE& */ "./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/topics/index.js?taro&type=script&parse=PAGE&");
-/* harmony import */ var _node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_js_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_js_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_js_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_js_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_js_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=script&parse=PAGE& */ "./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/topics/index.jsx?taro&type=script&parse=PAGE&");
+/* harmony import */ var _node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_script_parse_PAGE___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ "./src/pages/topics/index.js?taro&type=template&parse=PAGE&":
-/*!*********************************************************!*\
-  !*** ./src/pages/topics?taro&type=template&parse=PAGE& ***!
-  \*********************************************************/
+/***/ "./src/pages/topics/index.jsx?taro&type=template&parse=PAGE&":
+/*!*******************************************************************!*\
+  !*** ./src/pages/topics/index.jsx?taro&type=template&parse=PAGE& ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _file_loader_name_path_name_wxml_context_D_taro_yanxuan_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_js_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=D:/taro/yanxuan/src!../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!.?taro&type=template&parse=PAGE& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=D:\\taro\\yanxuan\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/topics/index.js?taro&type=template&parse=PAGE&");
-/* harmony import */ var _file_loader_name_path_name_wxml_context_D_taro_yanxuan_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_js_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_D_taro_yanxuan_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_js_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_D_taro_yanxuan_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_js_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_D_taro_yanxuan_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_js_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _file_loader_name_path_name_wxml_context_D_taro_yanxuan_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!file-loader?name=[path][name].wxml&context=D:/taro/yanxuan/src!../../../node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!../../../node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./index.jsx?taro&type=template&parse=PAGE& */ "./node_modules/file-loader/dist/cjs.js?name=[path][name].wxml&context=D:\\taro\\yanxuan\\src!./node_modules/@tarojs/mini-runner/dist/loaders/miniTemplateLoader.js!./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/topics/index.jsx?taro&type=template&parse=PAGE&");
+/* harmony import */ var _file_loader_name_path_name_wxml_context_D_taro_yanxuan_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_file_loader_name_path_name_wxml_context_D_taro_yanxuan_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _file_loader_name_path_name_wxml_context_D_taro_yanxuan_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _file_loader_name_path_name_wxml_context_D_taro_yanxuan_src_node_modules_tarojs_mini_runner_dist_loaders_miniTemplateLoader_js_node_modules_tarojs_mini_runner_dist_loaders_wxTransformerLoader_js_ref_6_0_index_jsx_taro_type_template_parse_PAGE___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
@@ -174,4 +271,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[["./src/pages/topics/index.js","runtime","vendors"]]]);
+},[["./src/pages/topics/index.jsx","runtime","vendors","common"]]]);

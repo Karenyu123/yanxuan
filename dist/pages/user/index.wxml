@@ -1,5 +1,44 @@
 <block wx:if="{{$taroCompReady}}">
-    <view>
-        <button>User</button>
+    <view class="user-center">
+        <view class="user-info">
+            <block>
+                <block wx:if="{{rawData}}">
+                    <view class="content">
+                        <image class="bg" src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+                        <view class="info">
+                            <image src="{{userInfo.avatarUrl}}" class="avatar" mode="widthFix"></image>
+                            <view class="title">{{userInfo.nickName}}</view>
+                        </view>
+                    </view>
+                </block>
+                <block wx:else>
+                    <button type="primary" size="mini" class="btn" plain="{{true}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+                </block>
+            </block>
+        </view>
+        <view class="main">
+            <view class="my-order">
+                <view class="title">我的订单</view>
+                <view class="order-tab">
+                    <navigator><text class="iconfont icon-dingdan"></text>
+                        <view class="text">全部订单</view>
+                    </navigator>
+                    <navigator><text class="iconfont icon-daifukuan"></text>
+                        <view class="text">待付款</view>
+                    </navigator>
+                    <navigator><text class="iconfont icon-daishouhuo-"></text>
+                        <view class="text">待收货</view>
+                    </navigator>
+                    <navigator><text class="iconfont  icon-tuikuan1"></text>
+                        <view class="text">退款/退货</view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="items address">收货地址管理</view>
+            <view class="items">联系客服</view>
+            <view class="items">意见反馈</view>
+            <view class="items">关于我们</view>
+            <view class="items share">分享应用</view>
+        </view>
     </view>
 </block>

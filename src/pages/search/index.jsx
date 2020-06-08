@@ -7,7 +7,7 @@ export default class Search extends Taro.Component {
   state = {
     keyword: '',
     isFocus: false,
-    openid: '',
+    openid: '0339cGX00ggkNI1taKX00sEQX009cGXn',
     suggestList: [],
     goodsList: [],
     order: 'asc',
@@ -42,7 +42,6 @@ export default class Search extends Taro.Component {
   }
   // 获取热门数据
   getHistoryData = async () => {
-    console.log('id',this.state.openid)
     const { historyData, hotKeywordList } = await request({ url: '/search/indexaction?openId=' + this.state.openid })
     this.setState({
       historyList: historyData,

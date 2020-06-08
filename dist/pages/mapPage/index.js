@@ -54,7 +54,7 @@ var MapPage = (_temp2 = _class = function (_Taro$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MapPage.__proto__ || Object.getPrototypeOf(MapPage)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray18", "keyword", "isFocus", "suggestList", "longitude", "latitude", "markers"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MapPage.__proto__ || Object.getPrototypeOf(MapPage)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray27", "keyword", "isFocus", "suggestList", "longitude", "latitude", "markers"], _this.state = {
       keyword: '',
       longitude: 0,
       latitude: 0,
@@ -161,12 +161,12 @@ var MapPage = (_temp2 = _class = function (_Taro$Component) {
           keyword = _state.keyword,
           suggestList = _state.suggestList;
 
-      var loopArray18 = suggestList.map(function (item, __index0) {
+      var loopArray27 = suggestList.map(function (item, __index0) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "gzzzz" + __index0;
+        var _$indexKey = "bfzzz" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function () {
           return _this2.handleSkipTo(item.$original.name);
@@ -178,7 +178,7 @@ var MapPage = (_temp2 = _class = function (_Taro$Component) {
         };
       });
       Object.assign(this.__state, {
-        loopArray18: loopArray18
+        loopArray27: loopArray27
       });
       return this.__state;
     }

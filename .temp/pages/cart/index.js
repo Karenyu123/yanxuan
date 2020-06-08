@@ -1,24 +1,52 @@
 import Nerv from "nervjs";
-import Taro from "@tarojs/taro-h5";
-import { View, Button } from '@tarojs/components';
+import Taro, { getStorageSync as _getStorageSync } from "@tarojs/taro-h5";
+import { View, Text, Radio, Image } from '@tarojs/components';
+import "./style.less";
+import { request } from '../../utils/request';
 
 export default class Cart extends Taro.Component {
-  constructor(props) {
-    super(props);
+  componentDidShow() {
+    this.getCartList();
   }
-  componentWillMount() {}
+  getCartList = async () => {
+    const data = await request({
+      url: '/cart/cartList', data: {
+        openId: _getStorageSync('openid')
+      }
+    });
+    console.log(data);
+  };
   render() {
-    return <View>
-        <Button>Cart</Button>
+    return <View className="cart">
+        <View className="header">
+          <Text className="txt">30天无忧退货</Text>
+          <Text className="txt">48小时快速退款</Text>
+          <Text className="txt">满88元免邮费</Text>
+        </View>
+        <View className="goods-list">
+          <View className="goods-item">
+            <Radio className="radio"></Radio>
+            <Image className="img" mode="widthFix" />
+            <View className="info">
+              <View className="name"></View>
+              <View className="price"></View>
+            </View>
+            <View className="count">2</View>
+          </View>
+        </View>
+        <View className="cart-footer">
+          <View className="left">
+            <Radio></Radio>
+            全选(0)
+            <View className="total-price">￥0</View>
+          </View>
+          <View className="order">下单</View>
+        </View>
       </View>;
   }
 
   componentDidMount() {
     super.componentDidMount && super.componentDidMount();
-  }
-
-  componentDidShow() {
-    super.componentDidShow && super.componentDidShow();
   }
 
   componentDidHide() {

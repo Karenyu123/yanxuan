@@ -3,14 +3,14 @@
         <view class="header"><text class="txt">30天无忧退货</text><text class="txt">48小时快速退款</text><text class="txt">满88元免邮费</text>
         </view>
         <view class="goods-list">
-            <view class="goods-item">
+            <view class="goods-item" wx:key="id" wx:for="{{cartlist}}" wx:for-item="item" wx:for-index="_anonIdx2">
                 <radio class="radio"></radio>
-                <image class="img" mode="widthFix"></image>
+                <image class="img" mode="widthFix" src="{{item.list_pic_url}}"></image>
                 <view class="info">
-                    <view class="name"></view>
-                    <view class="price"></view>
+                    <view class="name">{{item.goods_name}}</view>
+                    <view class="price">￥ {{item.retail_price}}</view>
                 </view>
-                <view class="count">2</view>
+                <view class="count">x {{item.number}}</view>
             </view>
         </view>
         <view class="cart-footer">

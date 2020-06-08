@@ -60,7 +60,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray25", "banner", "channel", "brandList", "newGoods", "hotGoods", "topicList", "newCategoryList", "location"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray32", "loopArray36", "banner", "channel", "brandList", "newGoods", "hotGoods", "topicList", "newCategoryList", "location"], _this.state = {
       location: '广水',
       banner: [],
       brandList: [],
@@ -117,7 +117,9 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       _taroWeapp2.default.navigateTo({ url: '/pages/detail/index?id=' + id });
     }, _this.toSearch = function () {
       _taroWeapp2.default.navigateTo({ url: '/pages/search/index' });
-    }, _this.anonymousFunc2Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.toCategoryList = function (id) {
+      _taroWeapp2.default.navigateTo({ url: '/pages/categoryList/index?id=' + id });
+    }, _this.anonymousFunc0Map = {}, _this.anonymousFunc3Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
@@ -244,23 +246,23 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
           newCategoryList = _state.newCategoryList;
 
 
-      this.anonymousFunc0 = function () {
+      this.anonymousFunc1 = function () {
         return _this2.toGoodsList("new");
       };
 
-      this.anonymousFunc1 = function () {
+      this.anonymousFunc2 = function () {
         return _this2.toGoodsList("hot");
       };
 
-      var loopArray25 = topicList.map(function (item, __index2) {
+      var loopArray32 = channel.map(function (item, __index0) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "hzzzz" + __index2;
+        var _$indexKey = "bizzz" + __index0;
 
-        _this2.anonymousFunc2Map[_$indexKey] = function () {
-          return _this2.toDetail(item.$original.id);
+        _this2.anonymousFunc0Map[_$indexKey] = function () {
+          return _this2.toCategoryList(item.$original.id);
         };
 
         return {
@@ -268,15 +270,40 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
           $original: item.$original
         };
       });
+      var loopArray36 = topicList.map(function (item, __index3) {
+        item = {
+          $original: (0, _taroWeapp.internal_get_original)(item)
+        };
+
+        var _$indexKey2 = "bjzzz" + __index3;
+
+        _this2.anonymousFunc3Map[_$indexKey2] = function () {
+          return _this2.toDetail(item.$original.id);
+        };
+
+        return {
+          _$indexKey2: _$indexKey2,
+          $original: item.$original
+        };
+      });
       Object.assign(this.__state, {
-        loopArray25: loopArray25
+        loopArray32: loopArray32,
+        loopArray36: loopArray36
       });
       return this.__state;
     }
   }, {
     key: 'anonymousFunc0',
-    value: function anonymousFunc0(e) {
+    value: function anonymousFunc0(_$indexKey) {
+      var _anonymousFunc0Map;
+
       ;
+
+      for (var _len2 = arguments.length, e = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        e[_key2 - 1] = arguments[_key2];
+      }
+
+      return this.anonymousFunc0Map[_$indexKey] && (_anonymousFunc0Map = this.anonymousFunc0Map)[_$indexKey].apply(_anonymousFunc0Map, e);
     }
   }, {
     key: 'anonymousFunc1',
@@ -285,21 +312,26 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     }
   }, {
     key: 'anonymousFunc2',
-    value: function anonymousFunc2(_$indexKey) {
-      var _anonymousFunc2Map;
+    value: function anonymousFunc2(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc3',
+    value: function anonymousFunc3(_$indexKey2) {
+      var _anonymousFunc3Map;
 
       ;
 
-      for (var _len2 = arguments.length, e = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
-        e[_key2 - 1] = arguments[_key2];
+      for (var _len3 = arguments.length, e = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+        e[_key3 - 1] = arguments[_key3];
       }
 
-      return this.anonymousFunc2Map[_$indexKey] && (_anonymousFunc2Map = this.anonymousFunc2Map)[_$indexKey].apply(_anonymousFunc2Map, e);
+      return this.anonymousFunc3Map[_$indexKey2] && (_anonymousFunc3Map = this.anonymousFunc3Map)[_$indexKey2].apply(_anonymousFunc3Map, e);
     }
   }]);
 
   return Index;
-}(_taroWeapp.Component), _class.$$events = ["toMapPage", "toSearch", "toBrandList", "anonymousFunc0", "anonymousFunc1", "anonymousFunc2"], _class.$$componentPath = "pages/index/index", _temp2);
+}(_taroWeapp.Component), _class.$$events = ["toMapPage", "toSearch", "anonymousFunc0", "toBrandList", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3"], _class.$$componentPath = "pages/index/index", _temp2);
 exports.default = Index;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(Index, true));

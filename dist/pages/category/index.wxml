@@ -1,5 +1,24 @@
 <block wx:if="{{$taroCompReady}}">
-    <view>
-        <button>Category</button>
+    <view class="category">
+        <view class="header">
+            <input class="search" placeholder="请输入搜索商品" bindtap="toSearch" /><text class="iconfont icon-search"></text>
+        </view>
+        <view class="content-wrapper">
+            <view class="nav-left">
+                <view class="{{index === currentIndex ? 'active nav-item' : 'nav-item'}}" wx:key="id" bindtap="anonymousFunc0" wx:for="{{loopArray24}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">{{item.$original.name}}</view>
+            </view>
+            <view class="category-right">
+                <view class="img-wrapper">
+                    <image class="img" mode="widthFix" src="{{currentCategory.banner_url}}"></image>
+                </view>
+                <view class="title">- {{currentCategory.name}} -</view>
+                <view class="list">
+                    <view class="item" wx:key="id" bindtap="anonymousFunc1" wx:for="{{loopArray25}}" wx:for-item="item" wx:for-index="__index1" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">
+                        <image class="avatar" mode="aspectFit" src="{{item.$original.wap_banner_url}}"></image>
+                        <view class="name">{{item.$original.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
     </view>
 </block>

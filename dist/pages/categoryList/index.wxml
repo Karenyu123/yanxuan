@@ -1,0 +1,27 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="category-list">
+        <scroll-view class="scroll" scroll-x="{{true}}" scroll-left="{{scrollLeft}}">
+            <view wx:key="id" class="{{currentNav.id === item.$original.id ? 'nav-item active' : 'nav-item'}}" bindtap="anonymousFunc0" wx:for="{{loopArray29}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">{{item.$original.name}}</view>
+        </scroll-view>
+        <view class="goodslist">
+            <view class="goods-title">
+                <view class="title">{{currentNav.name}}</view>
+                <view class="subtitle">{{currentNav.front_desc}}</view>
+            </view>
+            <block>
+                <block wx:if="{{goodslist.length}}">
+                    <view class="list-wrapper">
+                        <view class="list-item" wx:key="id" bindtap="anonymousFunc1" wx:for="{{loopArray30}}" wx:for-item="item" wx:for-index="__index1" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">
+                            <image class="img" mode="widthFix" src="{{item.$original.list_pic_url}}"></image>
+                            <view class="name">{{item.$original.name}}</view>
+                            <view class="price">￥{{item.$original.retail_price}}</view>
+                        </view>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="null">啊噢，暂无相关商品..</view>
+                </block>
+            </block>
+        </view>
+    </view>
+</block>

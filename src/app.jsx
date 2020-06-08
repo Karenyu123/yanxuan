@@ -33,7 +33,9 @@ class App extends Component {
       'pages/goods/index',
       'pages/order/index',
       'pages/selectAddress/index',
-      'pages/addAddress/index'
+      'pages/addAddress/index',
+      'pages/categoryList/index',
+      'pages/topicDetail/index'
     ],
     window: {
       backgroundTextStyle: 'light',
